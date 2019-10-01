@@ -2,8 +2,18 @@ import turtle
 x=0
 y=0
 turtle.bgcolor("black")
-def star(x,y,color1,color2):
+    
+def spiral(b,c,pen): #draw a spiral star
+    turtle.pencolor(pen)
     turtle.speed(10)
+    turtle.pu()
+    turtle.setposition(b,c)
+    turtle.pd()
+    for i in range(20):
+        turtle.forward(i * 10)
+        turtle.right(144)
+        
+def star(x,y,color1,color2):
     turtle.pu()
     turtle.setposition(x,y) #set the position of the pen
     turtle.pd()
@@ -38,7 +48,9 @@ for trigs in range (4): #duplicate the triangles
 turtle.ht()
 
     
-
+    
+spiral(400,-250,"white")
+spiral(-300,-200,"blue")
 star(-200,250,"yellow","red") #define the function
 star(200,200,"blue","green")
 star(-400,250,"purple","pink")
