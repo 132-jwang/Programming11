@@ -20,29 +20,26 @@ def star(x,y,color1,color2):
     turtle.color(color1,color2)
     
     turtle.begin_fill()
-    for i in range(5): #draw a star
+    counter=0
+    while counter<5: #draw a star
         turtle.forward(200)
         turtle.right(144)
+        counter=counter+1
     turtle.end_fill()
 
 a=0
-b=0
-def trig(a,b):
+b=-300
+def circle(a,b):
     turtle.pu()
     turtle.setposition(a,b) #set the position of the pen
     turtle.pd()
     turtle.color("brown","grey")
-    counter=0
-    
     turtle.begin_fill()
-    while counter <3: #draw a triangle
-        turtle.right(120)
-        turtle.forward(100)
-        counter=counter+1
+    turtle.circle(50) #draw the circle
     turtle.end_fill()
 
-for trigs in range (4): #duplicate the triangles
-    trig(a,b)
+for circles in range (4): #duplicate the circle
+    circle(a,b)
     a=a-100
 
 turtle.ht()
@@ -50,10 +47,10 @@ turtle.ht()
     
     
 spiral(400,-250,"white")
-spiral(-300,-200,"blue")
+spiral(-500,-200,"blue")
 star(-200,250,"yellow","red") #define the function
 star(200,200,"blue","green")
-star(-400,250,"purple","pink")
-trig(0,0)
+star(-400,150,"purple","pink")
+circle(0,-300)
 
 
